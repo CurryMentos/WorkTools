@@ -7,8 +7,8 @@ import java.util.Random;
  */
 public class PKGame {
     public static void main(String[] args) {
-        String a = "罗宁";
-        String b = "杨威";
+        String a = "小A";
+        String b = "小B";
 
         List<String> list1 = new ArrayList<>();
         list1.add(a + "把" + b + "按在地上暴揍一顿");
