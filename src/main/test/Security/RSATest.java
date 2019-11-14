@@ -23,35 +23,34 @@ import java.util.Map;
  * RSA非对称加密解密
  */
 public class RSATest {
-    private static Map<String, String> keyMap = new HashMap<String, String>();//用于封装随机产生的公钥与私钥
+    static Map<String, String> keyMap = new HashMap<String, String>();//用于封装随机产生的公钥与私钥
+    static String OriginStr = "麒超是渣男";//原始字符串
+    static String EncodedStr = "LFia1+YUG2Dmvh/pt62IobyTUxzlKKPA+uuJzUQbs/JIA0qoFZGPfGoacrcwBknTvBAlvGwonUtKqTfCDZVl9A==";//加密后的字符串
+    static String privateKeyString = "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEA2O0u8yiwlm7p+V7Ja4wQNHjcBsGC4SkyNKK8Wf+ANFsOuSoMd5EddQUe/BdbTVVJ2Chxcw1JKCRbshqReOD6FQIDAQABAkBLaVD8CTYyZcaDAXemIp/zjdx3oMgd/FNOxxARfWgVSrqf36BVIz7ycOdKJ1SqOEL3OOiTCpSoVYQpDTdlzB6BAiEA67IHljUKGKgZpjmF8KOoQ4npFezPpgcs6+2XPNSAcrUCIQDrnTpwLwDSJmt4GLA9gjEbZBqSWPqGeg7y7J92Lsgl4QIhAM6pc22JZCjqfFL77S1q0oclzXKkCg6SDBlyYkG8MkRhAiEApy82szm3BGc8pMgn7k0+WShL7oJyqg9cIiWi9PI3FSECICtEOhq6vVy5cygF6CKdowo7F+/14X+zzJzOyjilsdhu\n";//私钥
 
-    @Test
-    public static void test() throws Exception {
+    public static void main(String[] args) throws Exception {
         DoEncode();
 //        DoDecode();
     }
 
+    //加密方法
     public static void DoEncode() throws Exception {
-        generateKeyPair();
-        String str = "麒超是渣男";//原始字符串
+        GenerateKeyPair();
         System.out.println("随机生成的公钥为:" + keyMap.get("publicKey"));
         System.out.println("随机生成的私钥为:" + keyMap.get("privateKey"));
-        String EncodeStr = encrypt(str, keyMap.get("publicKey"));
+        String EncodeStr = encrypt(OriginStr, keyMap.get("publicKey"));
         System.out.println("加密后的字符串为:" + EncodeStr);
         String DecodeStr = decrypt(EncodeStr, keyMap.get("privateKey"));
         System.out.println("解密后的字符串为:" + DecodeStr);
     }
 
+    //解密方法
     public static void DoDecode() throws Exception {
-        String EncodedStr = "dqR/DSRBIbBpUYn4W+Nc0ka21WH1BQFsXWPxe55QMwG+8VFIbauoEr4lpRshvp+plH0PAz71zIu2FIZmK45y6Q==";//加密后的字符串
-        String publicKeyString = "";
-        String privateKeyString = "";
-        keyMap.put("publicKey", publicKeyString);
         keyMap.put("privateKey", privateKeyString);
         System.out.println(EncodedStr + "解密后的字符串为:" + decrypt(EncodedStr, keyMap.get("privateKey")));
     }
 
-    public static void generateKeyPair() throws Exception {
+    public static void GenerateKeyPair() throws Exception {
         //基于RSA算法生成公钥和私钥对
         KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
         //初始化密钥大小,至少512bit

@@ -21,14 +21,22 @@ import java.util.List;
 
 public class DESTest {
 
-    @Test
-    public static void test() throws Exception {
-        jdkDES();
+    public static void main(String[] args) {
+        try {
+            jdkDES();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    private static String path = Thread.currentThread().getContextClassLoader().getResource("020.txt").getPath();
-    private static String method = "DES";
-    private static byte[] keyBytes = {'z', 'y', 'z', '1', '2', '3', '4'};
+    static String path = Thread.currentThread().getContextClassLoader().getResource("020.txt").getPath();
+    static String OriginStr = "麒超是渣男";
+    static String method = "DES";
+    static byte[] keyBytes = {'z', 'y', 'z', '1', '2', '3', '4'};
+
+    public static void GenerateKey(){
+
+    }
 
     public static void jdkDES() throws Exception {
         FileReader fileReader = new FileReader(path);
