@@ -1,5 +1,7 @@
 package Swing;
 
+import org.testng.annotations.Test;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
@@ -37,7 +39,8 @@ public class JFrameTest extends javax.swing.JFrame {
         jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//退出应用程序默认窗体关闭
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         new JFrameTest().CreateJFrame("");
     }
 }
