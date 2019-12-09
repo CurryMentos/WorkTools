@@ -3,7 +3,6 @@ package Security;
 import org.apache.commons.codec.binary.Base64;
 import org.testng.annotations.Test;
 
-
 /**
  * Created by zengyouzu on 2019/11/1.
  * Base64加密解密
@@ -12,7 +11,7 @@ public class Base64Test {
 
     @Test
     public static void test() {
-        String string = "麒超是渣男";
+        String string = "17720091234";
 
         String encodeStr = encode(string.getBytes());
         System.out.println(string + "编码后的字符串为：" + encodeStr);
@@ -30,4 +29,5 @@ public class Base64Test {
     public static String decode(byte[] bytes) {
         return new String(Base64.decodeBase64(bytes));
     }
+
 }
