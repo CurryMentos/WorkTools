@@ -9,31 +9,64 @@ import java.math.BigInteger;
  * 递归算法
  */
 public class Recursive {
-    public int sumA(int i) {
+    public int getValueA(int i) {
         if (i == 1) {
             return 1;
         }
-        return i + sumA(i - 1);
+        return i + getValueA(i - 1);
     }
 
-    public BigInteger sumB(int i) {
+    public BigInteger getValueB(int i) {
         if (i == 1) {
             return BigInteger.ONE;
         }
-        return BigInteger.valueOf(i).multiply(sumB(i - 1));
+        return BigInteger.valueOf(i).multiply(getValueB(i - 1));
     }
 
-    public void LoopPlus() {
-        System.out.println("计算结果：" + sumA(100) + "!");
+    public int getValueC(int i) {
+        if (i == 1 || i == 2) {
+            return 1;
+        }
+        return getValueC(i - 1) + getValueC(i - 2);
     }
 
-    public void LoopMultiply(){
-        System.out.println("计算结果：" + sumB(10) + "!");
+    public int getValueD(int x, int y) {
+        if (y <= x && y >= 0) {
+            if (y == 0 || x == y) {
+                return 1;
+            } else {
+                return getValueD(x - 1, y - 1) + getValueD(x - 1, y);
+            }
+        }
+        return -1;
+
+    }
+
+    //阶加
+    public void LoopPlus(int i) {
+        System.out.println("计算结果：" + getValueA(i) + "!");
+    }
+
+    //阶乘
+    public void LoopMultiply(int i) {
+        System.out.println("计算结果：" + getValueB(i) + "!");
+    }
+
+    //斐波那契数列
+    public void Fibonacci(int i) {
+        System.out.println("计算结果：" + getValueC(i) + "!");
+    }
+
+    //杨辉三角
+    public void PascalTriangle(int x, int y) {
+        System.out.println("计算结果：" + getValueD(x, y) + "!");
     }
 
     @Test
-    public void test(){
+    public void test() {
 //        LoopPlus();
-        LoopMultiply();
+//        LoopMultiply();
+//        Fibonacci(5);
+        PascalTriangle(10,8);
     }
 }
