@@ -64,9 +64,9 @@ public class Recursive {
 
     @Test
     public void test() {
-//        LoopPlus();
+        LoopPlus(10);
 //        LoopMultiply();
 //        Fibonacci(5);
-        PascalTriangle(10,8);
+//        PascalTriangle(10,8);
     }
 }

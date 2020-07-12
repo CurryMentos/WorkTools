@@ -20,25 +20,12 @@ public class CreatePassword {
         }
         list.add(GetRandomChar('A', 'Z'));//大写字母
         list.add(GetRandomChar('0', '9'));//数字
-//        list.add(GetRandomChar('!', '*'));//特殊字符
+        list.add(GetRandomChar('!', '*'));//特殊字符
         //打乱顺序
         Collections.shuffle(list);
         // 生成随机密码
         for (Character pwd : list) {
             System.out.print(pwd);
-        }
-    }
-
-    public static void main(String[] args) {
-        int array[] = new int[]{15, 21, 17, 3, 69, 40};
-        int length = array.length;
-        for (int i = 0; i < length / 2; i++) {
-            int temp = array[i];
-            array[i] = array[length - 1 - i];
-            array[length - 1 - i] = temp;
-        }
-        for (int i : array) {
-            System.out.println(i);
         }
     }
 }

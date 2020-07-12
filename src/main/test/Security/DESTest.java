@@ -34,10 +34,6 @@ public class DESTest {
     static String method = "DES";
     static byte[] keyBytes = {'z', 'y', 'z', '1', '2', '3', '4'};
 
-    public static void GenerateKey(){
-
-    }
-
     public static void jdkDES() throws Exception {
         FileReader fileReader = new FileReader(path);
         BufferedReader bufferedReader = new BufferedReader(fileReader);

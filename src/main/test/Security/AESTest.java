@@ -57,7 +57,7 @@ public class AESTest {
 
     @Test
     public static void test() throws Exception {
-        String message = "哈哈哈";//明文
+        String message = "工资";//明文
         String password = "1234";//密文
         SecretKey secretKey = generateKey(password);//密钥
         /*String encodedKey = Base64.getEncoder().encodeToString(secretKey.getEncoded());

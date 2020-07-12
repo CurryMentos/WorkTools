@@ -4,7 +4,7 @@
  */
 public class LowerCaseToUpperCase {
     public static void main(String[] args) {
-        String str = "t_rec_tools_info";
+        String str = "46";
         System.out.println(str.toUpperCase());
     }
 }

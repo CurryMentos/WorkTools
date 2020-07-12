@@ -11,7 +11,8 @@ public class Base64Test {
 
     @Test
     public static void test() {
-        String string = "112966";
+        String string = "merchant - XN1.xlsx";
+
 
         String encodeStr = encode(string.getBytes());
         System.out.println(string + "编码后的字符串为：" + encodeStr);

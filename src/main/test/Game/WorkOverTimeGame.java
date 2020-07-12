@@ -1,4 +1,4 @@
-//import org.testng.annotations.Test;
+package Game;//import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,16 +31,6 @@ public class WorkOverTimeGame {
     }
 
     public static void main(String[] args) {
-//        System.out.println("恭喜" + RandomChoose() + "同学喜提周末加班");
-        int array1[] = {1, 2, 3};
-        int array2[] = {2, 3, 4};
-
-        for (int i = 0; i <= array1.length; i++) {
-            for (int j = 0; j < array2.length; j++) {
-                if (array1[i] == array2[j]) {
-                    System.out.println(array1[i]);
-                }
-            }
-        }
+        System.out.println("恭喜" + RandomChoose() + "同学喜提周末加班");
     }
 }

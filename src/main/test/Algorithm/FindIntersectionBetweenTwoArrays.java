@@ -67,10 +67,8 @@ public class FindIntersectionBetweenTwoArrays {
                 int value = map.get(key);
                 value++;
                 map.put(key, value);
-                System.out.println(map);
             } else {
                 map.put(key, 1);
-                System.out.println(map);
             }
         }
         for (int i = 0; i < arr2.length; i++) {
@@ -88,5 +86,6 @@ public class FindIntersectionBetweenTwoArrays {
         FindIntersectionBetweenTwoArrays fb = new FindIntersectionBetweenTwoArrays();
         List<Integer> res = fb.getIntersection3(arr1, arr2);
         System.out.println(res);
+
     }
 }
